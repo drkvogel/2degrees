@@ -14,7 +14,17 @@ result can be output as string, e.g., "2.3 m", "6 yd", "0.4 in"
 #     """ Contain functionality in a class?
 #     """
 
-def __init__(self):
+# class Unit:
+# units = [
+#     ["Yard", "yd", 914.4],
+#     ["Inch", "in", 25.4],
+#     ["Metre", "m", 1000]
+# ]
+
+def __init__(self, name, abbr, mm_amount):
+    self.name = name
+    self.abbr = abbr
+    self.mm = mm_amount
     return
 
 def convert_length(in_unit, in_amount, out_unit, print_unit=False):
@@ -35,7 +45,10 @@ def convert_length(in_unit, in_amount, out_unit, print_unit=False):
         Exception: one or both of the units specified were not understood
         Exception: both of the units were the same
     """
-
-
+    in_unit
+    in_amount
+    out_unit
+    print_unit
 
     return
+
