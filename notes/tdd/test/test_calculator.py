@@ -3,10 +3,15 @@ from app.calculator import Calculator   # how?
 
 class TddInPythonExample(unittest.TestCase):
 
+    def setUp(self):        # setUp() and tearDown() defined in unittest
+        self.calc = Calculator()
+
     def test_calculator_add_method_returns_correct_result(self):
-        calc = Calculator()
-        result = calc.add(2,2)
+        result = self.calc.add(2,2) # must be self.x otherwise not found
         self.assertEqual(4, result)
+
+    def test_calculator_returns_error_message_if_both_args_not_numbers(self):
+        self.assertRaises(ValueError, self.calc.add, 'two', 'three')
 
 if __name__ == '__main__':
     unittest.main()         # standard unittest runner
