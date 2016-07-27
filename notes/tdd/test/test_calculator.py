@@ -13,5 +13,11 @@ class TddInPythonExample(unittest.TestCase):
     def test_calculator_returns_error_message_if_both_args_not_numbers(self):
         self.assertRaises(ValueError, self.calc.add, 'two', 'three')
 
+    def test_error_if_x_not_number(self):
+        self.assertRaises(ValueError, self.calc.add, 'two', 3)
+
+    def test_error_if_y_not_number(self):
+        self.assertRaises(ValueError, self.calc.add, 2, 'three')
+
 if __name__ == '__main__':
     unittest.main()         # standard unittest runner
